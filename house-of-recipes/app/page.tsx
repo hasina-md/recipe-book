@@ -1,7 +1,7 @@
 import React from "react";
-
+import Recipes from "../pages/recipes";
 export default function recipe() {
-  return <h1>
-    hello
-  </h1>
+  return <>
+  <Recipes recipes={ [] }  />
+  </>
 }
