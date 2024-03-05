@@ -4,25 +4,25 @@ import Recipe from '../components/Recipe';
 // Import the data directly from the JSON file
 import recipesData from '../public/recipes.json';
 
-const Recipes = ({ recipes }) => {
-  return (
-    <div>
-      <h1>Recipe Book</h1>
+const Recipes = ({ recipes }) => (
+  <div>
+    <h1>Recipe Book</h1>
+    <ul>
       {recipes.map((recipe) => (
-        <Recipe key={recipe.id} recipe={recipe} />
+        <li key={recipe.id}>
+          <Recipe recipe={recipe} />
+        </li>
       ))}
-    </div>
-  );
-};
+    </ul>
+  </div>
+);
 
-// Pass the recipes directly as props
 export async function getStaticProps() {
-  // Fetch recipes from the JSON file
-  const recipes = recipesData;
+  const recipes = await import('../public/recipes.json');
 
   return {
     props: {
-      recipes,
+      recipes: recipes.default,
     },
   };
 }
