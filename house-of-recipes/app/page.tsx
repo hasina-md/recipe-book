@@ -1,7 +1,8 @@
 import React from "react";
 import Recipes from "../pages/recipes";
-export default function recipe() {
+import { recipesData } from "@/public/recipes";
+export default function Recipe() {
   return <>
-  <Recipes recipes={ [] }  />
+  <Recipes recipes={ recipesData}  />
   </>
 }

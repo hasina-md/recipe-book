@@ -2,7 +2,7 @@ import React from 'react';
 import Recipe from '../components/Recipe';
 
 // Import the data directly from the JSON file
-import recipesData from '../public/recipes.json';
+import recipesData from '../public/recipes';
 
 const Recipes = ({ recipes }) => (
   <div>
@@ -18,7 +18,7 @@ const Recipes = ({ recipes }) => (
 );
 
 export async function getStaticProps() {
-  const recipes = await import('../public/recipes.json');
+  const recipes = await import('../public/recipes');
 
   return {
     props: {
